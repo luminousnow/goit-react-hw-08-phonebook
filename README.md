@@ -1,11 +1,3 @@
-# How to use App
-
-- runs the local db [json-server --watch db.json] open
-  [http://localhost:3030/contacts] more info
-  (https://github.com/typicode/json-server#getting-started)
-- runs the app in the development mode. Open
-  [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
 # Getting Started with Create React App
 
 This project was bootstrapped with
