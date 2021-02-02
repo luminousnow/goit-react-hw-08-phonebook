@@ -10,6 +10,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+
 import contactsReducer from './contacts/contacts-reducer';
 
 const middleware = [
@@ -19,14 +20,15 @@ const middleware = [
     },
   }),
 ];
-const persistConfig = {
-  key: 'root',
+const contactsPersistConfig = {
+  key: 'contacts',
   storage,
+  whitelist: ['item'],
 };
 
 const store = configureStore({
   reducer: {
-    contacts: persistReducer(persistConfig, contactsReducer),
+    contacts: persistReducer(contactsPersistConfig, contactsReducer),
   },
   middleware,
   devTools: process.env.NODE_ENV !== 'production',
