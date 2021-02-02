@@ -12,7 +12,7 @@ function ContactList() {
   const contactList = useSelector(getFilteredContacts);
   const dispatch = useDispatch();
 
-  useEffect(() => dispatch(fetchAllContacts()), [dispatch]);
+  // useEffect(() => dispatch(fetchAllContacts()), [dispatch]);
 
   return (
     <>
@@ -34,4 +34,4 @@ function ContactList() {
   );
 }
 
-export default ContactList;
+export { ContactList };
