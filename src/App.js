@@ -1,26 +1,22 @@
 import React from 'react';
-import Container from './components/Container';
-import Section from './components/Section/Section';
-import ContactForm from './components/ContactForm';
-import Filter from './components/Filter/Filter';
-import ContactList from './components/ContactList';
+import Container from '@material-ui/core/Container';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { AppBar } from '@material-ui/core';
+import { Route, Switch } from 'react-router-dom';
+import { Home, Contacts, Register, Login } from './views';
 
 function App() {
   return (
-    <>
-      <Container>
-        <Section>
-          <h1>Phonebook</h1>
-          <ContactForm />
-        </Section>
-
-        <Section>
-          <h2>Contacts</h2>
-          <Filter />
-          <ContactList />
-        </Section>
-      </Container>
-    </>
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <AppBar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/contacts" component={Contacts} />
+        <Route path="/register" component={Register} />
+        <Route path="/login" component={Login} />
+      </Switch>
+    </Container>
   );
 }
 
