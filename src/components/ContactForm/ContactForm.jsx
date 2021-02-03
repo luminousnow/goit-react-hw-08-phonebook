@@ -1,12 +1,7 @@
-import s from './ContactForm.module.css';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createContact } from '../../redux/contacts/contacts-operations';
 import { getAllContacts } from '../../redux/contacts/contacts-selectors';
-
-//
-
-// import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
