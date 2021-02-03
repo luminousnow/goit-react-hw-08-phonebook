@@ -1,14 +1,10 @@
-import s from './Filter.module.css';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import InputBase from '@material-ui/core/InputBase';
+import SearchIcon from '@material-ui/icons/Search';
+import { fade, makeStyles } from '@material-ui/core/styles';
 import { filterChange } from '../../redux/contacts/contacts-actions';
 import { getFilter } from '../../redux/contacts/contacts-selectors';
-
-//
-
-import InputBase from '@material-ui/core/InputBase';
-import { fade, makeStyles } from '@material-ui/core/styles';
-import SearchIcon from '@material-ui/icons/Search';
 
 const useStyles = makeStyles(theme => ({
   root: {

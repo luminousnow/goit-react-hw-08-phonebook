@@ -6,7 +6,7 @@ import {
   deleteContact,
 } from '../../redux/contacts/contacts-operations';
 import { getFilteredContacts } from '../../redux/contacts/contacts-selectors';
-import ContactListItem from './ContactListItem';
+import { ContactListItem } from '../../components';
 
 function ContactList() {
   const contactList = useSelector(getFilteredContacts);
