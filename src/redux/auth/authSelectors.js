@@ -6,4 +6,4 @@ const authSelektors = {
   getUserName,
 };
 
-export { getIsLoggedIn, getUserName };
+export { authSelektors, getIsLoggedIn, getUserName };

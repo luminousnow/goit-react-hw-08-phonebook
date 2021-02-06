@@ -3,7 +3,10 @@ import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { AppBar } from '@material-ui/core';
 import { Route, Switch } from 'react-router-dom';
-import { Home, Contacts, Register, Login } from './views';
+import { Home } from './views/HomeView';
+import { Contacts } from './views/ContactsView';
+import { Register } from './views/RegisterView';
+import { Login } from './views/LoginView';
 
 function App() {
   return (
