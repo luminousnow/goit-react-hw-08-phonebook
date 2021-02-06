@@ -37,7 +37,7 @@ export const createContact = createAsyncThunk(
   },
 );
 
-// deleteContact thunk
+// deleteContact
 export const deleteContact = createAsyncThunk(
   'contact/delete',
   async (contactId, { rejectWithValue }) => {

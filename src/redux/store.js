@@ -20,6 +20,8 @@ const middleware = [
     },
   }),
 ];
+
+// Persist Config
 const authPersistConfig = {
   key: 'auth',
   storage,
