@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:3030';
+// axios.defaults.baseURL = 'http://localhost:3030';
 
 // get all contacts from db.json
 async function fetchContacts() {
