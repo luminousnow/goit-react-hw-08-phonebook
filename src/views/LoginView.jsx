@@ -1,4 +1,5 @@
-import React from 'react';
+import { useDispatch } from 'react-redux';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -9,6 +10,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { logIn } from '../redux/auth/authOperations';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -32,6 +34,42 @@ const useStyles = makeStyles(theme => ({
 
 export function Login() {
   const classes = useStyles();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
+
+  // for input text fields whos changing by user
+  const handleChange = evt => {
+    const { name, value } = evt.target;
+
+    // записує відповідне значення у відповідний State
+    switch (name) {
+      case 'email':
+        setEmail(value);
+        break;
+
+      case 'password':
+        setPassword(value);
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  // for Submit button
+  const onSubmitPress = evt => {
+    evt.preventDefault();
+
+    dispatch(logIn({ email, password }));
+    resetFormField();
+  };
+
+  // utilits === set input fields value by default
+  const resetFormField = () => {
+    setEmail('');
+    setPassword('');
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -43,12 +81,14 @@ export function Login() {
         <Typography component="h1" variant="h5">
           Login
         </Typography>
-        <form className={classes.form} noValidate>
+        <form onSubmit={onSubmitPress} className={classes.form} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
             required
             fullWidth
+            onChange={handleChange}
+            value={email}
             id="email"
             label="Email"
             name="email"
@@ -60,6 +100,8 @@ export function Login() {
             margin="normal"
             required
             fullWidth
+            onChange={handleChange}
+            value={password}
             name="password"
             label="Password"
             type="password"
@@ -73,11 +115,11 @@ export function Login() {
             color="primary"
             className={classes.submit}
           >
-            Sign In
+            Login
           </Button>
           <Grid container>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/registration" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
