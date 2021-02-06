@@ -92,7 +92,7 @@ function ContactForm() {
             <ContactPhoneIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            My phonebook
+            Contacts
           </Typography>
           <form onSubmit={onSubmitPress} className={classes.form} noValidate>
             <TextField

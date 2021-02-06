@@ -37,9 +37,6 @@ export function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
-  console.log(name);
-  console.log(email);
-  console.log(password);
 
   // for input text fields whos changing by user
   const handleChange = evt => {
@@ -68,24 +65,8 @@ export function Register() {
   const onSubmitPress = evt => {
     evt.preventDefault();
 
-    // checks the unique Name
-    // if (
-    //   contactsList.find(item => item.name.toLowerCase() === name.toLowerCase())
-    // ) {
-    //   alert(`${name} is already in contact`);
-    //   return;
-    // }
-
-    // () => ({
-    //   dispatch(register({ name, email, password })),
-    //   resetFormField(),
-    // });
-
     dispatch(register({ name, email, password }));
     resetFormField();
-    console.log(name);
-    console.log(email);
-    console.log(password);
   };
 
   // utilits === set input fields value by default
@@ -158,7 +139,7 @@ export function Register() {
             color="primary"
             className={classes.submit}
           >
-            Sign Up
+            Registration
           </Button>
         </form>
       </div>
