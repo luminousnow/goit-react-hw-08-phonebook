@@ -10,8 +10,10 @@ const UserMenu = () => {
   return (
     <div className="userMenu">
       <img src={avatar} alt="" width="32" />
-      <span>Hello, {name}</span>
-      <button type="button" onClick={() => dispatch(logOut())}>
+      <div className="gret">
+        <p>Hi, {name}</p>
+      </div>
+      <button type="button" className="btn" onClick={() => dispatch(logOut())}>
         LogOut
       </button>
     </div>
