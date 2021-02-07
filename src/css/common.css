@@ -26,3 +26,12 @@ ul {
 p {
   margin: 0;
 }
+
+.userMenu {
+  display: flex;
+}
+
+.appBar {
+  display: flex;
+  justify-content: space-between;
+}

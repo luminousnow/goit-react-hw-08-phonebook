@@ -8,7 +8,7 @@ const UserMenu = () => {
   const name = useSelector(getUserName);
 
   return (
-    <div>
+    <div className="userMenu">
       <img src={avatar} alt="" width="32" />
       <span>Hello, {name}</span>
       <button type="button" onClick={() => dispatch(logOut())}>
