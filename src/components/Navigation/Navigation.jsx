@@ -6,8 +6,14 @@ const Navigation = params => {
   const isLoggedIn = useSelector(getIsLoggedIn);
   return (
     <nav>
-      <NavLink to="/">Home</NavLink>
-      {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
+      <NavLink to="/" className="menuItem">
+        Home
+      </NavLink>
+      {isLoggedIn && (
+        <NavLink to="/contacts" className="menuItem">
+          Contacts
+        </NavLink>
+      )}
     </nav>
   );
 };

@@ -32,6 +32,27 @@ p {
 }
 
 .appBar {
+  margin: 20px 0px;
+
   display: flex;
   justify-content: space-between;
+}
+
+.menuItem {
+  margin-right: 1px;
+  padding: 1em 1.5em;
+
+  background-color: #3f51b5;
+  color: white;
+  border-radius: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menuItem:hover {
+  background-color: #555;
+}
+
+.menuItem:active {
+  background-color: black;
 }
