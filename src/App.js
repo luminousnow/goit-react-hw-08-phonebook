@@ -27,17 +27,12 @@ function App() {
         <PublicRoute path="/registration" restricted>
           <Register />
         </PublicRoute>
-        <PublicRoute path="/login" restricted>
+        <PublicRoute path="/login" redirectTo="/contacts" restricted>
           <Login />
         </PublicRoute>
-        <PrivateRoute path="/contacts">
+        <PrivateRoute path="/contacts" redirectTo="/login">
           <Contacts />
         </PrivateRoute>
-
-        {/* <Route exact path="/" component={Home} /> */}
-        {/* <Route path="/registration" component={Register} /> */}
-        {/* <Route path="/login" component={Login} /> */}
-        {/* <Route path="/contacts" component={Contacts} /> */}
       </Switch>
     </Container>
   );
