@@ -6,3 +6,5 @@ export { AppBar } from './AppBar/AppBar';
 export { Navigation } from './Navigation/Navigation';
 export { NavAuth } from './Navigation/NavAuth/NavAuth';
 export { UserMenu } from './UserMenu/UserMenu';
+export { PublicRoute } from './Route/PublicRoute';
+export { PrivateRoute } from './Route/PrivateRoute';

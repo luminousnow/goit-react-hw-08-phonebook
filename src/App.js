@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { AppBar } from './components';
-import { Route, Switch } from 'react-router-dom';
+import { AppBar, PublicRoute, PrivateRoute } from './components';
+import { Switch } from 'react-router-dom';
 import { Home } from './views/HomeView';
 import { Contacts } from './views/ContactsView';
 import { Register } from './views/RegisterView';
@@ -21,10 +21,23 @@ function App() {
       <CssBaseline />
       <AppBar />
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/contacts" component={Contacts} />
-        <Route path="/registration" component={Register} />
-        <Route path="/login" component={Login} />
+        <PublicRoute exact path="/">
+          <Home />
+        </PublicRoute>
+        <PublicRoute path="/registration" restricted>
+          <Register />
+        </PublicRoute>
+        <PublicRoute path="/login" restricted>
+          <Login />
+        </PublicRoute>
+        <PrivateRoute path="/contacts">
+          <Contacts />
+        </PrivateRoute>
+
+        {/* <Route exact path="/" component={Home} /> */}
+        {/* <Route path="/registration" component={Register} /> */}
+        {/* <Route path="/login" component={Login} /> */}
+        {/* <Route path="/contacts" component={Contacts} /> */}
       </Switch>
     </Container>
   );
